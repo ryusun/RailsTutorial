@@ -1,7 +1,7 @@
 RailsTutorial
 =============
 
-(rails tutorial)[http://railstutorial.jp]  
+[rails tutorial](http://railstutorial.jp)  
 
 * Start 2014-06-10 
 
