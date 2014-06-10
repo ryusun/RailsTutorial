@@ -13,4 +13,21 @@ rbenvは導入済みだった
 ```
 gem update --system (version)
 ```
+(version)にバージョンを指定することで、gemの指定したバージョンを取得することが可能。  
+
+* .gemrcにgemの設定を記述する  
+```.gemrc
+install: --no-rdoc --no-ri
+update: --no-rdoc --no-ri
+```
+これでriとrdocのインストールを省くことができる。  
+今まで、gem install xx --no-rdoc --no-ri  
+と書いていたのが楽になります。  
+
+* rails install  
+```
+gem install rails --version 4.0.5
+```
+railsの4.0.5のインストール  
+
 
