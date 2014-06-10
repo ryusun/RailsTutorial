@@ -25,9 +25,16 @@ update: --no-rdoc --no-ri
 と書いていたのが楽になります。  
 
 * rails install  
-```
+```rails
 gem install rails --version 4.0.5
 ```
 railsの4.0.5のインストール  
+
+```rails
+rails -v
+```
+で、railsのバージョンを確認できる。  
+
+* 最初のアプリケーション  
 
 
