@@ -1,4 +1,4 @@
 RailsTutorial
 =============
 
-(rails tutorial[http://railstutorial.jp]  
+(rails tutorial)[http://railstutorial.jp]  
