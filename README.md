@@ -126,10 +126,10 @@ rails server
 
 で、開発マシンでのみブラウズ可能なローカルWebサーバーが起動します。  
 JavaScriptランタイムがインストールされていないというエラーが出た場合は、
-https://github.com/sstephenson/execjs
+[github](https://github.com/sstephenson/execjs)
 にある、インストール可能なランタイムを確認する。 Node.jsがおすすめ。  
 
-
+ローカルWebサーバーには、
 http://localhost:3000/  
 にブラウザでアクセスできます。  
 
