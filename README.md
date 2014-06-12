@@ -153,6 +153,29 @@ app/ディレクトリ配下にある、「model」、「views」、「controlle
 >動的なサイトでは、一般にコントローラは (ユーザーなどの) サイトの要素を表しており、データベースとの通信を担当しているRubyのオブジェクトであるmodel (モデル) と対話します。  
 >モデルを呼び出した後、コントローラは、ビューをレンダリングし、完成したWebページをHTMLとしてブラウザに返します。  
 
+# 1.3 Gitによるバージョン管理  
+gitインストール後にやるべきこと  
 
+* git config --global user.name "name"  
+* git config --global your.email@example.com  
+
+* git config --global alias.co checkout  
+checkoutが長いので、coというエイリアスにする設定  
+
+* git config --global core.editor "subl -w"  
+comment用のエディタにサブライムテキストを指定する方法  
+
+* .gitignoreファイルの見直し  
+デフォルトである程度設定されているが、見直しをしておく  
+下記を追加する.  
+
+># Ignore other unneeded files.
+>doc/
+>*.swp
+>*~
+>.project
+>.DS_Store
+>.idea
+>.secret
 
 
