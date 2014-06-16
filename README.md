@@ -230,7 +230,20 @@ git branch -D "ブランチ名"
 
 # 1.4 デプロイする  
 
+* herokuを使う  
+herokuの無料プランがデフォルトで使用するDBがPostgreSQLなので、production用のgemとして、  
+pg gemをインストールする必要がある。  
 
+* 疑問  
+ProductionとDevelopmentの環境、ここではDBが違うことによる不都合とかはないのか？  
 
+* 疑問はこの先解明するとして、続ける。  
+
+```Gemfile
+group :production do
+    gem 'pg' , '0.15.1'
+    gem 'rails_12factor', '0.0.2'
+end
+```
 
 
