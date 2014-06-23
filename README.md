@@ -246,4 +246,79 @@ group :production do
 end
 ```
 
+* production以外を適用するコマンド  
+
+```bundle
+bundle install --without production
+```
+
+この状態でコミットしておく  
+
+```git
+git commit -a -m "Update gemfile.lock for heroku"
+```
+
+* herokuにログインしよう  
+herokuのページで会員登録する。  
+あとは、ツールをインストール  
+install後は /usr/local/heroku
+にPATHが通っていれば下記のコマンドを実行してログインできる  
+
+
+```
+heroku loguin
+```
+
+* gitにpushするだけでデプロイが終わる素晴らしいツール  
+
+```heroku
+cd first_app
+heroku create
+```
+
+これで、デプロイ用の環境ができた。  
+
+git push するだけだが、remoteの設定は必要  
+
+```
+git remote add heroku git@heroku.com:gitリポジトリ名
+```
+
+で設定したら、
+
+```
+git push heroku master
+```
+
+で、デプロイ完了という驚異的なスピード  
+
+```
+heroku open
+```
+
+でサイトが閲覧できる。  
+rails4はまだ対応していないようで、エラーですが。  
+
+さて、サンプルアプリケーションの名前を変更してみる  
+
+```
+heroku rename <name*
+```
+
+これで終わり。  
+tutorialofrails  
+に変更してみた  
+
+
+これで環境作成は終わり。時間取れないと長いなー  
+
+次がやっとrailsですｗ  
+
+# 第2章 デモアプリケーション  
+
+
+
+
+
+
 
