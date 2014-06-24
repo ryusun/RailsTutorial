@@ -328,6 +328,97 @@ Gemfileはfirst_apnと同じ
 
 ## 2.1.1ユーザーのモデル設計  
 
+* ユーザーモデル  
+ユーザーテーブルですね  
+
+|id|name|email|
+|:--|:--|:--|
+|integer|string|string|
+
+
+* マイクロポストモデル  
+ポストされたデータのモデル  
+
+|id|content|user_id|
+|:--|:--|:--|
+|integer|string|integer|
+
+という形式で、ポストとユーザーをuser_idで紐付けするシンプルな構造  
+
+## 2.2 Usersリソース  
+ユーザー用のデータモデルを、そのモデルを表示するためのWebインターフェイスに従って実装する  
+
+* scaffoldジェネレータで生成  
+railsのscaffoldは、rails generateスクリプトにscaffoldコマンドを渡して生成する。  
+scaffoldのコマンド引数には、リソース名を単数形にしたもの(この場合はUser)を使用し、  
+必要に応じて、データモデルの属性をオプションとしてパラメータに追加する。  
+
+```
+rails generate scaffold User name:string email:string
+```
+
+**[重要]idパラメータはRailsによって、自動的に主キーとしてデータベースに追加されるので不要**  
+
+ジェネレートしたリソースは次のコマンドでデータベースにマイグレートできます  
+
+```
+bundle exec rake db:migrate
+```
+
+rails server  
+コマンドでローカルサーバーを起動する  
+ちなみに、  
+rails s  
+で起動する  
+
+* rakeについて  
+rakeはRuby版のmakeコマンド  
+Makefileをrubyで記述できるようにしている。  
+rake db:migrateでDBに簡単にmigrateできるのも利点  
+rake -T dbオプションをつけて実行すると様々なデーベースタスクが用意されているのがわかる  
+
+```
+bundle exec rake -T db
+```
+
+rakeで実行可能なタスクをすべて表示するには以下を実行します  
+
+```
+bundle exec rake -T
+```
+
+## 2.2.1 ユーザーページを表示する  
+http://localhost:3000  
+にアクセスすると、デフォルトのRailsページが見える。  
+実はUsersリソースを作成した時に、これ以外の様々な「ユーザーを扱うためのページ」がすでに作成されている  
+/usersを表示すると、すべてのユーザーの一番が表示される  
+/users/newを表示すると、新規ユーザー作成ページが表示される。  
+
+* ユーザーに関連するページについて  
+
+
+|URL|アクション|用途|
+|:--:|:--:|:--:|
+|/users|index|すべてのユーザーを一覧するページ|
+|/users/1|show|id=1のユーザーを表示するページ|
+|/users/new|new|新規ユーザーを作成するページ|
+|/users/1/edit|edit|id=1のユーザーを編集するページ|
+
+※ scaffoldすげー便利だな… でもこのページはいらないってなったらどうすんだ？  
+単純に削除ですかね？  
+
+上記のページを操作して、ユーザーの追加、変更、削除をやってみた  
+削除はJavascriptで行われるようだ。  
+
+## 2.2.2 MVCの挙動  
+
+
+
+
+
+
+
+
 
 
 
